@@ -1,0 +1,17 @@
+[
+{
+	"modid": "FC",
+	"name": "FurryCraft",
+	"description": "Where you can let your inner Furry out to play.",
+	"version": "1.0",
+	"mcversion": "1.6.4",
+	"url": "",
+	"updateUrl": "",
+	"authors": ["Lone Blackfang"],
+	"credits": "",
+	"logoFile": "",
+	"screenshots": [],
+	"parent":"",
+	"dependencies": []
+}
+]
