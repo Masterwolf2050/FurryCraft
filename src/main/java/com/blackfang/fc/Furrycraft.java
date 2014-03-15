@@ -33,7 +33,30 @@ public class Furrycraft{
     {
     	// set version number
         event.getModMetadata().version = Reference.VERSION_NUMBER;
+        
+        // Conduct the version check and log the result
+        VersionHelper.execute();
 
+        // Initialize the Version Check Tick Handler (Client only)
+        TickRegistry.registerTickHandler(new VersionCheckTickHandler(), Side.CLIENT);
+
+        // Initialize the InterModCommunications Tick Handler (Server only)
+        TickRegistry.registerScheduledTickHandler(new InterModCommsHandler(), Side.SERVER);
+
+        // Initialize the Render Tick Handler (Client only)
+        proxy.registerRenderTickHandler();
+
+        // Register the KeyBinding Handler (Client only)
+        proxy.registerKeyBindingHandler();
+
+        // Register the Sound Handler (Client only)
+        proxy.registerSoundHandler();
+
+        // Initialize mod blocks
+        ModBlocks.init();
+
+        // Initialize mod items
+        ModItems.init();
     }
     
     @Init
